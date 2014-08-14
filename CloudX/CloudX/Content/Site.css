@@ -1,4 +1,4 @@
-﻿#body{height:2000px;width:1355px;margin-left:-8px;margin-top:-8px;padding:0;}
+﻿#body{height:2000px;width:1355px;margin:-8px auto;padding:0;}
 #navwrap{height:80px;width:1355px;background:#afafaf;margin-top:0;float:left;opacity:0.65;}
 #logowrap{float:left;display:block;width:245px;height:80px;}
 #logo{height:80px; width:130px;background:url("/Images/logo.png") no-repeat;float:left;}
@@ -8,6 +8,7 @@
 #navitem li{list-style:none;display:block;float:left;height:80px;width:201px;text-align:center;line-height:80px;font-family:"微软雅黑";font-size:35px;}
 #navitem a{color:#fdc;text-decoration:none;}
 #navitem a:hover{color:#fdc;}
+#first_li{background:url("/Images/nav.png");}
 #download{height:568px;width:1355px;border:0;padding:0;background:url("/Images/hdbg.png") no-repeat; float:left;}
 #picture{height:530px;width:454px;background:url("/Images/picture.png")  no-repeat;position:relative;left:200px;top:30px;float:left;}
 #description{height: 530px;width:570px;background:url("/Images/content.png");position:relative;left:700px;}

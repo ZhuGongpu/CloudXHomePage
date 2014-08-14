@@ -1,1 +1,123 @@
-﻿This is platform page
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>开放平台 - CloudX - Connect Everything!</title>
+    <style>
+        #navwrap {
+            height: 80px;
+            width: 1355px;
+            background: #afafaf;
+            float: left;
+            opacity: 0.65;
+            position: relative;
+            top: -8px;
+            left: auto;
+        }
+
+        #logowrap {
+            float: left;
+            display: block;
+            width: 245px;
+            height: 80px;
+        }
+
+        #logo {
+            height: 80px;
+            width: 130px;
+            background: url("/Images/logo.png") no-repeat;
+            float: left;
+            display: block;
+        }
+
+        #homepage {
+            display: block;
+            color: green;
+            list-style: none;
+            font-family: '微软雅黑';
+            font-size: 30px;
+            text-align: left;
+            line-height: 80px;
+            float: left;
+            height: 80px;
+            width: 115px;
+            font-style: center;
+        }
+
+        #navigation {
+            margin-left: 65px;
+            height: 80px;
+            width: 891px;
+            float: left;
+        }
+
+        #navitem {
+            display: block;
+            float: left;
+            margin-top: 0;
+        }
+
+            #navitem li {
+                list-style: none;
+                display: block;
+                float: left;
+                height: 80px;
+                width: 201px;
+                text-align: center;
+                line-height: 80px;
+                font-family: "微软雅黑";
+                font-size: 35px;
+            }
+
+            #navitem a {
+                color: #fdc;
+                text-decoration: none;
+            }
+
+                #navitem a:hover {
+                    color: #fdc;
+                }
+        #first_li {
+            background: url("/Images/nav.png");
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("navitem");
+            var oLi = oDiv.getElementsByTagName("li");
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].onmouseover = function () {
+                    this.style.background = "url(../Images/nav.png)";
+                };
+                if (i != 3) {
+                    oLi[i].onmouseout = function () {
+                        this.style.backgroundImage = "none";
+                    }
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="navwrap">
+        <div id="logowrap">
+            <div id="logo"></div>
+            <li id="homepage">CloudX</li>
+        </div>
+        <div id="navigation">
+            <ul id="navitem">
+                <li>
+                    @Html.ActionLink("主页", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("反馈", "Feedback", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("联系我们", "Contact", "Home")
+                </li>
+                <li id="first_li">
+                    @Html.ActionLink("开放平台", "Platform", "Home")
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,1 +1,574 @@
-﻿This is the feedback page 
+﻿@{Layout = "../Shared/_Layout.cshtml";}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>反馈 - CloudX - Connect Everything!</title>
+    <link rel="stylesheet" type="text/css" href="../Content/contact_form.css" />
+    <style type="text/css">
+        #division {
+            font-size: 0.5px;
+        }
+
+        body {
+            font-family: microsoft yahei,Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            background: #E5E6D0 url(http://www.shejidaren.com/wp-content/themes/Daren/images/bg.jpg) repeat 0 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+            a img {
+                border: 0;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .user-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #DE4C1C;
+        }
+
+        .wrapper {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+
+
+        /* comment style */
+        .ds-post-main {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .ds-avatar {
+            z-index: 2;
+            position: absolute;
+            top: 48px;
+            left: -20px;
+            padding: 5px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            box-shadow: -1px 0 1px rgba(0,0,0,.15) inset;
+            background: #E5E6D0 url(http://www.shejidaren.com/wp-content/themes/Daren/images/bg.jpg) repeat 0 0;
+        }
+
+            .ds-avatar a {
+                display: block;
+                padding: 1px;
+                width: 32px;
+                height: 32px;
+                border: 1px solid #B9BAA6;
+                border-radius: 50%;
+                background-color: #fff;
+                -moz-transition: color 0.15s linear;
+                -webkit-transition: color 0.15s linear;
+                transition: color 0.15s linear;
+            }
+
+            .ds-avatar img {
+                display: block;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22);
+            }
+
+            .ds-comment-body, .ds-avatar, .ds-avatar a,
+            .ds-avatar img {
+                -webkit-transition: .4s all ease-in-out;
+                -moz-transition: .4s all ease-in-out;
+                -o-transition: .4s all ease-in-out;
+                -ms-transition: .4s all ease-in-out;
+                transition: .4s all ease-in-out;
+            }
+
+        .ds-post-main:hover .ds-avatar img {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+
+        .ds-comment-body {
+            z-index: 1;
+            position: relative;
+            left: 0;
+            background: #F0F0E3;
+            padding: 15px 15px 15px 47px;
+            color: #696A52;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15), 0 1px 0 rgba(255,255,255,.75) inset;
+        }
+
+
+        /* layout */
+        .ds-post-main:hover .ds-comment-body {
+            left: 40px;
+        }
+
+        .ds-post-main:hover .ds-avatar:after, .ds-post-main:hover .ds-avatar a:after, .ds-post-main:hover .ds-avatar a:before {
+            position: absolute;
+            content: '+';
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #696A52;
+        }
+
+        /*第3个加号*/
+        .ds-post-main:hover .ds-avatar:after {
+            top: 14px;
+            left: 56px;
+            visibility: hidden; /*隐藏加号*/
+        }
+        /*第2个加号*/
+        .ds-post-main:hover .ds-avatar a:after {
+            top: 9px;
+            left: 48px;
+            visibility: hidden;
+        }
+        /*第1个加号*/
+        .ds-post-main:hover .ds-avatar a:before {
+            top: 9px;
+            left: -29px;
+            visibility: hidden;
+        }
+        /*3个图和3个加号整体，可以改0*/
+        .ds-post-main:hover .ds-avatar {
+            left: -0px; /*40改0*/
+        }
+            /*左2个图和2个加号，可以改0*/
+            .ds-post-main:hover .ds-avatar a {
+                position: relative;
+                left: -0px; /*80改0*/
+            }
+                /*左1个图，可以改0*/
+                .ds-post-main:hover .ds-avatar a img {
+                    position: relative;
+                    left: -0px;
+                }
+
+        
+
+        body, input {
+           
+            font-size: 14px;
+            line-height: 24px;
+            color: #333;
+            font-family: Microsoft yahei, Song, Arial, Helvetica, Tahoma, Geneva;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            background: #0051a1;
+        }
+
+        #content #post, #comment p {
+            zoom: 1;
+        }
+
+            #content #post:after, #comment p:after {
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+                overflow: hidden;
+                content: '.';
+            }
+
+        .transition {
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            -ms-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+
+        #content {
+            margin: 0 auto;
+            width: 600px;
+            overflow: hidden;
+        }
+
+            #content #post {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px #d4d4d4 dashed;
+            }
+
+                /*在这里调节post下的textarea*/
+                #content #post textarea {
+                    display: block;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    width: 550px;
+                    height: 200px;
+                    border: 1px #d1d1d1 solid;
+                    border-radius: 5px;
+                    resize: none;
+                    outline: none;
+                }
+
+                    #content #post textarea:hover {
+                        border: 1px #9bdf70 solid;
+                        background: #f0fbeb;
+                    }
+
+                #content #post #postBt, #content #post #clearBt {
+                    margin-left: 5px;
+                    padding: 3px;
+                    float: right;
+                }
+
+        #comment {
+            overflow: hidden;
+        }
+
+            #comment p {
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+                #comment p:nth-child(odd) {
+                    border: 1px solid #e3e197;
+                    background: #ffd;
+                }
+
+                #comment p:nth-child(even) {
+                    border: 1px solid #adcd3c;
+                    background: #f2fddb;
+                }
+
+                #comment p span {
+                    display: inline;
+                    float: left;
+                }
+
+                #comment p .msg {
+                    width: 738px;
+                }
+
+                #comment p .datetime, #wrapper1 .datetime {
+                    width: 200px;
+                    color: #999;
+                    text-align: right;
+                }
+
+        #navwrap {
+            margin:8px 8px;
+            
+            height: 80px;
+            width: 1355px;
+            background: #afafaf;
+            float: left;
+            opacity: 0.65;
+            position: relative;
+            top: -8px;
+            left: auto;
+        }
+
+        #logowrap {
+            float: left;
+            display: block;
+            width: 245px;
+            height: 80px;
+        }
+
+        #logo {
+            height: 80px;
+            width: 130px;
+            background: url("/Images/logo.png") no-repeat;
+            float: left;
+            display: block;
+        }
+
+        #homepage {
+            display: block;
+            color: green;
+            list-style: none;
+            font-family: '微软雅黑';
+            font-size: 30px;
+            text-align: left;
+            line-height: 80px;
+            float: left;
+            height: 80px;
+            width: 115px;
+            font-style: center;
+        }
+
+        #navigation {
+            margin-left: 65px;
+            height: 80px;
+            width: 891px;
+            float: left;
+        }
+
+        #navitem {
+            display: block;
+            float: left;
+            margin-top: 0;
+        }
+
+            #navitem li {
+                list-style: none;
+                display: block;
+                float: left;
+                height: 80px;
+                width: 201px;
+                text-align: center;
+                line-height: 80px;
+                font-family: "微软雅黑";
+                font-size: 35px;
+            }
+
+            #navitem a {
+                color: #fdc;
+                text-decoration: none;
+            }
+
+                #navitem a:hover {
+                    color: #fdc;
+                }
+
+        #first_li {
+            background: url("/Images/nav.png");
+        }
+    </style>
+    
+    <script src="../Scripts/getUrlParam.js"></script>
+    <script type="text/javascript">
+        var Storage =
+        {
+            saveData: function ()//保存数据
+            {
+                //获取post下的textarea的输入
+                //var data = document.querySelector("#post textarea");
+                //alert(data.value);
+                //if (data.value != "")
+                //{
+                //    var time = new Date().getTime() + Math.random() * 5;//getTime是Date对象中的方法，作用是返回 1970年01月01日至今的毫秒数
+                //    localStorage.setItem(time, data.value + "|" + this.getDateTime());//将毫秒数存入Key值中，可以降低Key值重复率
+                //    data.value = "";
+                //    this.writeData();
+                //}
+                //else {
+                //    alert("请填写您的留言！");
+                //}
+
+                //var data = document.getElementById("message1").value
+                var data = document.querySelector("#contact textarea");
+                var usrname = document.getElementById("name").value;
+
+
+                var ran_num = Math.round(Math.random() * 15.5);
+                var usrimg_form = ".jpg";
+                if (Math.random() < 0.4)
+                    usrimg_form = ".gif";
+                var usrimg_ran = "../Images/cloudx_user_img/" + ran_num + usrimg_form;
+
+                if (usrname == "") {
+                    usrname = "CloudX用户";
+                    usrimg_ran = "cloudx_user_img/default.jpg";
+                }
+
+                //在这里random头像
+
+                if (data.value != "") {
+
+                    var time = new Date().getTime() + Math.random() * 5;//getTime是Date对象中的方法，作用是返回 1970年01月01日至今的毫秒数
+                    localStorage.setItem(time, data.value + "|" + this.getDateTime() + "|" + usrname + "|" + usrimg_ran);//将毫秒数存入Key值中，可以降低Key值重复率
+
+                    data.value = "";
+                    this.writeData();
+                }
+                else {
+                    alert("请填写您的留言！");
+                }
+            },
+
+
+
+            writeData: function ()//输出数据
+            {
+                //var dataHtml = "", data = "";
+                //for (var i = localStorage.length - 1; i >= 0; i--)//效率更高的循环方法
+                //{
+                //    data = localStorage.getItem(localStorage.key(i)).split("|");
+                //    dataHtml += "<p><span class=\"msg\">" + data[0] + "</span><span class=\"datetime\">" + data[1] + "</span></p>";
+                //}
+                //document.getElementById("comment").innerHTML = dataHtml;
+
+
+
+                var dataHtml2 = "", data2 = "";
+
+                var name = UrlParm.parm("name");
+                var a = localStorage.length - 1;
+                var b = localStorage.length - 11;
+                //var have_clean_callus = localStorage.getItem("have_clean");
+                //if (name == "callus") {
+                //    //alert(localStorage.length);
+
+                //    if (have_clean_callus != "have clean")
+                //        for (var i = a; i != b; i--)//效率更高的循环方法.原本是length-1，但是如果从callus跳转过来，会产生10个奇怪的data[0]。所以改成length-10了。
+                //        {
+                //            //怎么能从17删到0？因为length在变
+                //            localStorage.removeItem(localStorage.key(i));
+
+                //        }
+
+                //    //localStorage.setItem("have_clean", "have clean");
+                //    //alert(localStorage.length);
+
+
+                //}
+
+                var tempi = localStorage.length - 1;
+
+                for (var i = tempi; i >= 0; i--)//效率更高的循环方法
+                {
+                    data2 = localStorage.getItem(localStorage.key(i)).split("|");
+
+                    if (data2[1] == "" || data2[1] == "undefined")//日期为空就删除
+                    {
+                        localStorage.removeItem(localStorage.key(i));
+                        continue;
+                    }
+
+
+                    //if (data2[0] != "have clean")
+                    dataHtml2 += "<div class=\"ds-post-main\">\ <div class=\"ds-avatar\">\<a title=\"CloudX用户\"  ><img alt=\"设计达人\" src=\"  " + data2[3] + "  \"></a>\</div>\<div class=\"ds-comment-body\">\ <a title=\"设计达人\"   class=\"user-name\">" + data2[2] + "</a><p>" + data2[0] + "</p> <span class=\"datetime\">" + data2[1] + "</span> </div> </div>";
+                }
+
+
+
+
+
+                document.getElementById("wrapper1").innerHTML = dataHtml2;
+            },
+            clearData: function ()//清空数据
+            {
+                if (localStorage.length > 0) {
+                    if (window.confirm("清空后不可恢复，是否确认清空？")) {
+                        localStorage.clear();
+                        this.writeData();
+                    }
+                }
+                else {
+                    alert("没有需要清空的数据！");
+                }
+            },
+            getDateTime: function ()//获取日期时间，例如 2012-03-08 12:58:58
+            {
+                var isZero = function (num)//私有方法，自动补零
+                {
+                    if (num < 10) {
+                        num = "0" + num;
+                    }
+                    return num;
+                }
+
+                var d = new Date();
+                return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) + ":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
+            }
+        }
+
+
+        window.onload = function () {
+            var oDiv = document.getElementById("navitem");
+            var oLi = oDiv.getElementsByTagName("li");
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].onmouseover = function () {
+                    this.style.background = "url(../Images/nav.png)";
+                };
+                if (i != 1) {
+                    oLi[i].onmouseout = function () {
+                        this.style.backgroundImage = "none";
+                    }
+                };
+            }
+            Storage.writeData();//当打开页面的时候，先将localStorage中的数据输出一边，如果没有数据，则输出空
+            // document.getElementById("postBt").onclick = function () { Storage.saveData(); }//发表评论按钮添加点击事件，作用是将localStorage中的数据输出
+            document.getElementById("clearBt").onclick = function () { Storage.clearData(); }//清空所有已保存的数据
+            document.getElementById("sendmsg").onclick = function () { Storage.saveData(); }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="navwrap">
+        <a id="logowrap" href="CloudX.html">
+            <div id="logo"></div>
+            <li id="homepage">CloudX</li>
+        </a>
+        <div id="navigation">
+            <ul id="navitem">
+                <li>
+                    @Html.ActionLink("主页", "Index", "Home")
+                </li>
+                <li id="first_li">
+                    @Html.ActionLink("反馈", "Feedback", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("联系我们", "Contact", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("开放平台", "Platform", "Home")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 如果不加这段div，导航栏就会因为留言卡的原因而下移，与留言卡重叠 -->
+    <div id="division">
+
+    </div>
+
+
+    <div id="content">
+        <div id="contact">
+            <h2>CloudX 留言卡</h2>
+            <form action="./CSS3 Contact Form_files/CSS3 Contact Form.htm" method="post">
+                <fieldset>
+                    <label for="name">昵称：</label>
+                    <input type="text" id="name" placeholder="Enter your full name">
+
+                    <label for="email">邮箱：</label>
+                    <input type="email" id="email" placeholder="Enter your email address">
+
+                    <label for="message">留言：</label>
+                    <textarea id="message1" placeholder="What&#39;s on your mind?"></textarea>
+
+                </fieldset>
+            </form>
+        </div>
+        <input type="button" value="发表评论" id="sendmsg">
+        <input id="clearBt" type="button" value="清空所有已保存的数据" />
+        <div id="post">
+
+
+        </div>
+
+    </div>
+
+
+    <div class="wrapper" id="wrapper1">
+    </div>
+
+</body>
+</html>

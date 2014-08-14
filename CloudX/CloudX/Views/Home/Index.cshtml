@@ -3,8 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 
 <head>
-    <title></title>
+    <title>主页 - CloudX - Connect Everything!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("navitem");
+            var oLi = oDiv.getElementsByTagName("li");
+            for(var i = 0;i < oLi.length;i++)
+            {
+                oLi[i].onmouseover = function () {
+                    this.style.background = "url(../Images/nav.png)";
+                };
+                if (i != 0)
+                {
+                    oLi[i].onmouseout = function () {
+                        this.style.backgroundImage = "none";
+                }
+                };
+            }
+        }
+        
+    </script>
 </head>
 
 <body>
@@ -16,7 +35,7 @@
             </div>
             <div id="navigation">
                 <ul id="navitem">
-                    <li>
+                    <li id="first_li">
                         @Html.ActionLink("主页", "Index", "Home")
                     </li>
                     <li>
@@ -80,6 +99,7 @@
         <div id="signature">
             <p>CloudX项目组©2013-2014</p>
         </div>
+        @{Layout="../Shared/_Layout.cshtml";}
     </div>
 </body>
 </html>
