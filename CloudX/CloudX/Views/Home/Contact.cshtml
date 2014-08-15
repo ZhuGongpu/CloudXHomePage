@@ -319,20 +319,39 @@
         }
 
         /* 生成手风琴效果的JS */
-
+        var oDiv = document.getElementById("first_floor_description");
+        var dt = oDiv.getElementsByTagName("dt");
+        var dd = oDiv.getElementsByTagName("dd");
+        var number0 = 0;
+        var number1 = 0;
+        var number2 = 0;
         $(function () {
             $('dd').filter(':nth-child(n)').addClass('hidden');
-            $('dl').on('click','dt',function () {
-                alert("asdasdasda");
-                $(this)
-                    .next()
-                        .slideDown(300)
-                        .siblings('dd')
-                            .slideUp(300);
-            });
-            
+            dt[0].onclick = function () {
+
+                if (number0 % 2 == 0)
+                    $(dd[0]).slideDown(300);
+                else
+                    $(dd[0]).slideUp(300);
+                number0++;
+            };
+            dt[1].onclick = function () {
+                if (number1 % 2 == 0)
+                    $(dd[1]).slideDown(300);
+                else
+                    $(dd[1]).slideUp(300);
+                number1++;
+            };
+            dt[2].onclick = function () {
+                if (number2 % 2 == 0)
+                    $(dd[2]).slideDown(300);
+                else
+                    $(dd[2]).slideUp(300);
+                number2++;
+            };
             generateFont();
         });
+     
     </script>
 
 

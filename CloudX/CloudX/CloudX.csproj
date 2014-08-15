@@ -294,12 +294,16 @@
     <Content Include="Images\hdbg.png" />
     <Content Include="Images\icon_top.png" />
     <Content Include="Images\ios.png" />
+    <Content Include="Images\linux.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\mac.png" />
     <Content Include="Images\nav.png" />
     <Content Include="Images\picture.png" />
     <Content Include="Images\second_floor_image.jpg" />
     <Content Include="Images\third_floor_image.jpg" />
     <Content Include="Images\top.png" />
+    <Content Include="Images\windows.png" />
+    <Content Include="Images\windows_phone.png" />
     <Content Include="Scripts\getUrlParam.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
