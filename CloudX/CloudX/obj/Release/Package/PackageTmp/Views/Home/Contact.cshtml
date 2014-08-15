@@ -1,0 +1,340 @@
+﻿<html>
+<head>
+    <title>
+        联系我们 - CloudX - Connect Everything!
+    </title>
+    <style>
+        #navwrap {
+            height: 80px;
+            width: 1355px;
+            background: #afafaf;
+            float: left;
+            opacity: 0.65;
+            position:relative;
+            top:-8px;
+            left:auto;
+        }
+
+        #logowrap {
+            float: left;
+            display: block;
+            width: 245px;
+            height: 80px;
+        }
+
+        #logo {
+            height: 80px;
+            width: 130px;
+            background: url("/Images/logo.png") no-repeat;
+            float: left;
+            display:block;
+        }
+
+        #homepage {
+            display: block;
+            color: green;
+            list-style: none;
+            font-family: '微软雅黑';
+            font-size: 30px;
+            text-align: left;
+            line-height: 80px;
+            float: left;
+            height: 80px;
+            width: 115px;
+            font-style: center;
+        }
+
+        #navigation {
+            margin-left: 65px;
+            height: 80px;
+            width: 891px;
+            float: left;
+        }
+
+        #navitem {
+            display: block;
+            float: left;
+            margin-top: 0;
+        }
+            #navitem li {
+                list-style: none;
+                display: block;
+                float: left;
+                height: 80px;
+                width: 201px;
+                text-align: center;
+                line-height: 80px;
+                font-family: "微软雅黑";
+                font-size: 35px;
+            }
+
+            #navitem a {
+                color: #fdc;
+                text-decoration: none;
+            }
+
+            #navitem a:hover {
+                color: #fdc;
+            }
+        #first_li {
+            background: url("/Images/nav.png");
+        }
+        #first_floor {
+            height: 565px;
+            width: 1355px;
+            background: #f4f4f4;
+            float: left;
+            border-top: 0;
+        }
+
+        #first_floor_description {
+            display: block;
+            float: left;
+            position: relative;
+            top: 75px;
+            left: 100px;
+        }
+
+        #first_floor_image {
+            height: 500px;
+            width: 700px;
+            float: left;
+            position: relative;
+            top: 50px;
+            left: 150px;
+        }
+
+
+        h2 {
+            width: 300px;
+            margin: 5px auto;
+            text-align: center;
+            font-family: 'microsoft yahei',Arial,sans-serif;
+            background: #f4f4f4;
+        }
+
+        h3 {
+            width: 300px;
+            margin: 5px;
+            text-align: center;
+            font-family: 'microsoft yahei',Arial,sans-serif;
+            background: #f4f4f4;
+        }
+
+        dd {
+            margin: 0;
+            padding: 20px 0;
+            font-size: 14px;
+            background: #fbfbfb;
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        dt {
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 23px;
+            background: #EB852A;
+            border-top: 1px solid #EFEFEF;
+            box-shadow: 0 1px 0 #FFFFFF;
+            font-weight: 400;
+            color: #fff;
+            text-align: left;
+            padding: 10px 14px;
+        }
+
+            dt:first-child {
+                border-top: none;
+            }
+
+            dt:nth-last-child(2) {
+                border-bottom: none;
+            }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="Stylesheet" type="text/css" href="http://www.youziku.com/webfont/css?id=69972e640fed9da5a49c3a93bee675d7&amp;guid=26086f93c98a4fae97854d89f7434252&amp;type=5">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&amp;ak=2b866a6daac9014292432d81fe9b47e3"></script>
+    <script src="http://d1.lashouimg.com/static/js/release/jquery-1.4.2.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("navitem");
+            var oLi = oDiv.getElementsByTagName("li");
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].onmouseover = function () {
+                    this.style.background = "url(../Images/nav.png)";
+                };
+                if (i != 2) {
+                    oLi[i].onmouseout = function () {
+                        this.style.backgroundImage = "none";
+                    }
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="navwrap">
+        <div id="logowrap">
+            <div id="logo"></div>
+            <li id="homepage">CloudX</li>
+        </div>
+        <div id="navigation">
+            <ul id="navitem">
+                <li>
+                    @Html.ActionLink("主页", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("反馈", "Feedback", "Home")
+                </li>
+                <li id ="first_li">
+                    @Html.ActionLink("联系我们", "Contact", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("开放平台", "Platform", "Home")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="first_floor">
+        <div id="first_floor_description">
+            <h2>
+                <dl>
+                    <dt> <i class="fa fa-users"></i> 关于我们</dt>
+                    <dd>
+                        B127 Studio      <br />
+                        北京航空航天大学软件学院本科生 <br />
+
+                    </dd>
+                    <dt><i class="fa fa-map-marker"></i>  联系方式</dt>
+                    <dd>
+                        <i class="fa fa-bank"></i> <i class="fa fa-qq"></i>
+                        QQ：867032329 <br />
+
+                        <i class="fa fa-weixin"></i> 微信：weixin_zgp <br />
+                    </dd>
+                    <dt><i class="fa fa-envelope"></i> 地址</dt>
+                    <dd>
+                        <i class="fa fa-building"></i> 北京市海淀区学院路37号北京航空航天大学 <br />
+
+                        <!--<i class="fa fa-qq"></i> QQ：867032329 <br />
+
+                        <i class="fa fa-weixin"></i> 微信：weixin_zgp <br />-->
+
+                    </dd>
+                </dl>
+            </h2>
+        </div>
+        <div id="first_floor_image">
+            <div style="width:700px;height:500px;border:1px solid gray" id="container">
+            </div>
+            <h3>
+                <script type="text/javascript">
+                    var map = new BMap.Map("container");
+                    map.centerAndZoom(new BMap.Point(116.35382, 39.987500), 13);
+                    map.enableScrollWheelZoom();
+                    var marker = new BMap.Marker(new BMap.Point(116.35382, 39.987500));
+                    map.addOverlay(marker);
+                    var licontent = "<b>北京航空航天大学</b><br>";
+                    licontent += "<span><strong>地址：</strong>北京市海淀区学院路37号</span><br>";
+                    licontent += "<span><strong>电话：</strong>(+86)15210017194</span><br>";
+                    licontent += "<span class=\"input\"><strong></strong><input class=\"outset\" type=\"text\" name=\"origin\" value=\"北京站\"/><input class=\"outset-but\" type=\"button\" value=\"公交\" onclick=\"gotobaidu(1)\" /><input class=\"outset-but\" type=\"button\" value=\"驾车\"  onclick=\"gotobaidu(2)\"/><a class=\"gotob\" href=\"url=\"http://api.map.baidu.com/direction?destination=latlng:" + marker.getPosition().lat + "," + marker.getPosition().lng + "|name:天安门" + "®ion=北京" + "&amp;output=html\" target=\"_blank\"></a></span>";
+                    var hiddeninput = "<input type=\"hidden\" value=\"" + '北京' + "\" name=\"region\" /><input type=\"hidden\" value=\"html\" name=\"output\" /><input type=\"hidden\" value=\"driving\" name=\"mode\" /><input type=\"hidden\" value=\"latlng:" + marker.getPosition().lat + "," + marker.getPosition().lng + "|name:天安门" + "\" name=\"destination\" />";
+                    var content1 = "<form id=\"gotobaiduform\" action=\"http://api.map.baidu.com/direction\" target=\"_blank\" method=\"get\">" + licontent + hiddeninput + "</form>";
+                    var opts1 = { width: 700 };
+
+                    var infoWindow = new BMap.InfoWindow(content1, opts1);
+                    marker.openInfoWindow(infoWindow);
+                    marker.addEventListener('click', function () { marker.openInfoWindow(infoWindow); });
+
+                    function gotobaidu(type) {
+                        if ($.trim($("input[name=origin]").val()) == "") {
+                            alert("请输入起点！");
+                            return;
+                        } else {
+                            if (type == 1) {
+                                $("input[name=mode]").val("transit");
+                                $("#gotobaiduform")[0].submit();
+                            } else if (type == 2) {
+                                $("input[name=mode]").val("driving");
+                                $("#gotobaiduform")[0].submit();
+                            }
+                        }
+                    }
+                </script>
+            </h3>
+        </div>
+
+    </div>
+
+
+    <!-- 基础HTML代码 //-->
+    <!-- 相关类库 -->
+
+    <script type='text/javascript' src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
+
+    <script type="text/javascript" src="http://www.youziku.com/UserDownFile/jquery.md5.js"></script>
+    <script type="text/javascript">
+        /*Javascript源代码*/
+
+        /* 生成漂亮字体相关JS */
+
+        function generateFont() {
+            var resultStr = $(".CRPCandGBouquet").text();
+            var md5 = "";
+            resultStr = Trim(resultStr);
+            resultStr = SelectWord(resultStr);
+            md5 = $.md5("26086f93c98a4fae97854d89f7434252" + "CRPCandGBouquet" + resultStr);
+
+            $.getJSON("http://www.youziku.com/webfont/CSSPOST?jsoncallback=?",
+                 { "id": md5, "guid": "26086f93c98a4fae97854d89f7434252", "type": "5" },
+                 function (json) {
+                     if (json.result === 0) { /*alert("需要生成");*/
+                         $.post("http://www.youziku.com/webfont/PostCorsCreateFont", {
+                             "name": "CRPCandGBouquet",
+                             "gid": "26086f93c98a4fae97854d89f7434252",
+                             "type": "5",
+                             "text": resultStr
+                         }, function (json) {
+                             if (json == "0") { /*alert("参数不对");*/
+                                 //alert("参数不对");
+                             } else if (json == "2") { /*alert("超过每日生成字体数的上限");*/
+                                 alert("超过每日生成字体数的上限");
+                             } else if (json == "3") { /*alert("当前正在生成请稍后");*/
+                                 alert("当前正在生成请稍后");
+                             } else { /*alert("正在生成");*/
+                                 alert("正在生成");
+                             }
+                         });
+                     } else { /*alert("下载css文件");*/
+                         loadExtentFile("http://www.youziku.com/webfont/css?id=" + md5 + "&guid=" + "26086f93c98a4fae97854d89f7434252" + "&type=5");
+                     }
+                 });
+        }
+
+        /* 生成手风琴效果的JS */
+
+        $(function () {
+            $('dd').filter(':nth-child(n)').addClass('hidden');
+            $('dl').on('click','dt',function () {
+                alert("asdasdasda");
+                $(this)
+                    .next()
+                        .slideDown(300)
+                        .siblings('dd')
+                            .slideUp(300);
+            });
+            
+            generateFont();
+        });
+    </script>
+
+
+</body>
+</html>

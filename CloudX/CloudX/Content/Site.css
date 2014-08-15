@@ -12,7 +12,14 @@
 #download{height:568px;width:1355px;border:0;padding:0;background:url("/Images/hdbg.png") no-repeat; float:left;}
 #picture{height:530px;width:454px;background:url("/Images/picture.png")  no-repeat;position:relative;left:200px;top:30px;float:left;}
 #description{height: 530px;width:570px;background:url("/Images/content.png");position:relative;left:700px;}
-#download_button{height:100px;width:100px;border-radius:100px;background:#0ef;position:relative;left:650px;bottom:100px;opacity: 0.3;text-align: center;line-height:100px;color:#000;font-size:20px;}
+.seven_button{height:100px;width:100px;border-radius:100px;position:absolute;left:650px;top:450px;text-align: center;line-height:100px;color:#fff;font-size:20px;}
+#download_button{background:url("/Images/download_button.png");float: left;z-index: 100;}
+#android{background:url("/Images/android.png");float: left;}
+#windows_phone{background:url("/Images/windows_phone.png");float: left;}
+#ios{background:url("/Images/ios.png");float: left;}
+#windows{background: url("/Images/windows.png");float: left;}
+#linux{background: url("/Images/linux.png");float: left;}
+#mac{background:url("/Images/mac.png");float: left;}
 #first_floor{height:565px;width:1355px;background:#f4f4f4;float:left;border-top:0;}
 #first_floor_description{display:block;float:left;position:relative;top:75px;left:100px;}
 #first_floor_image{height:388px;width:690px;background:url("/Images/first_floor_image.jpg");float:left;position:relative;top:80px;left:300px;}

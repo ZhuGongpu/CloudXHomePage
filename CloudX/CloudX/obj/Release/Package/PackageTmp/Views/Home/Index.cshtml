@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<link href="~/Content/Site.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+
+<head>
+    <title>主页 - CloudX - Connect Everything!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("navitem");
+            var oLi = oDiv.getElementsByTagName("li");
+            for(var i = 0;i < oLi.length;i++)
+            {
+                oLi[i].onmouseover = function () {
+                    this.style.background = "url(../Images/nav.png)";
+                };
+                if (i != 0)
+                {
+                    oLi[i].onmouseout = function () {
+                        this.style.backgroundImage = "none";
+                }
+                };
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div id="body">
+        <div id="navwrap">
+            <div id="logowrap">
+                <div id="logo"></div>
+                <li id="homepage">CloudX</li>
+            </div>
+            <div id="navigation">
+                <ul id="navitem">
+                    <li id="first_li">
+                        @Html.ActionLink("主页", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("反馈","Feedback","Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("联系我们","Contact","Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("开放平台","Platform","Home")
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="download">
+            <div id="picture"></div>
+            <div id="description"></div>
+            <div id="download_button">下载</div>
+        </div>
+        <div id="display">
+            <div id="first_floor">
+                <div id="first_floor_description">
+                    <h3>
+                        屏幕共享<br />
+                        <h4>
+                            设备太远看不见？<br />
+                            一切尽在你眼中！<br />
+                        </h4>
+                    </h3>
+                    <p> 设备之间可共享屏幕和适配<br />实现远程操作<br /><br />不同的设备还可整合起来<br />使之相互作为屏幕的扩展</p>
+                </div>
+                <div id="first_floor_image"></div>
+            </div>
+            <div id="second_floor">
+                <div id="second_floor_image"></div>
+                <div id="second_floor_description">
+                    <h3>
+                        文件资源共享<br />
+                        <h4>
+                            不用数据线不用找电脑<br />
+                            小手机也可看大片<br />
+                        </h4>
+                        在PC、笔记本等储设备中适当划分出部分存储空间<br />用于储存共享的数据<br /><br />小容量的移动设备就可以随时访问到更多的资源。
+                    </h3>
+                </div>
+            </div>
+            <div id="third_floor">
+                <div id="third_floor_description">
+                    <h3>
+                        多设备操作映射<br />
+                        <h4>
+                            控制电脑<br />
+                            手机操作更方便<br />
+                        </h4>
+                    </h3>
+                    <p>移动设备为传统的PC提供丰富多样的操作形式<br />当移动设备连接到家庭云中时<br /><br />可以利用设备自身的触摸屏<br />以及其他传感器来控制电脑</p>
+                </div>
+                <div id="third_floor_image"></div>
+            </div>
+        </div>
+        <div id="signature">
+            <p>CloudX项目组©2013-2014</p>
+        </div>
+        @{Layout="../Shared/_Layout.cshtml";}
+    </div>
+</body>
+</html>
