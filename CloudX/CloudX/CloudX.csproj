@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\contact_form.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -252,6 +253,7 @@
     <None Include="Properties\PublishProfiles\cloudxhome - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.8.2-vsdoc.js" />
     <Content Include="Images\android.png" />
+    <Content Include="Images\apple.png" />
     <Content Include="Images\cloudx_user_img\0.gif" />
     <Content Include="Images\cloudx_user_img\0.jpg" />
     <Content Include="Images\cloudx_user_img\1.gif" />
@@ -284,32 +286,34 @@
     <Content Include="Images\cloudx_user_img\8.jpg" />
     <Content Include="Images\cloudx_user_img\9.gif" />
     <Content Include="Images\cloudx_user_img\9.jpg" />
+    <Content Include="Images\cloudx_user_img\android.png" />
     <Content Include="Images\cloudx_user_img\default.jpg" />
     <Content Include="Images\code_arrow.png" />
     <Content Include="Images\content.png" />
-    <Content Include="Images\download_button.png" />
+    <Content Include="Images\download.png" />
     <Content Include="Images\first_floor_image.jpg" />
     <Content Include="Images\ft-rep.png" />
     <Content Include="Images\hdbg.jpg" />
     <Content Include="Images\hdbg.png" />
     <Content Include="Images\icon_top.png" />
-    <Content Include="Images\ios.png" />
     <Content Include="Images\linux.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\mac.png" />
     <Content Include="Images\nav.png" />
+    <Content Include="Images\navwrap.png" />
     <Content Include="Images\picture.png" />
     <Content Include="Images\second_floor_image.jpg" />
     <Content Include="Images\third_floor_image.jpg" />
     <Content Include="Images\top.png" />
     <Content Include="Images\windows.png" />
-    <Content Include="Images\windows_phone.png" />
+    <Content Include="Images\wp.png" />
     <Content Include="Scripts\getUrlParam.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -322,6 +326,8 @@
     <Content Include="Scripts\move.js" />
     <Content Include="Scripts\move_s.js" />
     <Content Include="Scripts\scrollToTop.js" />
+    <Content Include="Video\fast.mp4" />
+    <Content Include="Video\test.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,14 +1,29 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<!DOCTYPE HTML>
 <link href="~/Content/Site.css" rel="stylesheet" />
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 
 <head>
     <title>主页 - CloudX - Connect Everything!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" /> 
+  
+
+    <script src="~/Scripts/move.js"></script>
+    <script src="~/Scripts/move_s.js"></script>
     <script>
         window.onload = function () {
+            var counter = 0;
             var oDiv = document.getElementById("navitem");
             var oLi = oDiv.getElementsByTagName("li");
+            var oDiv_download = document.getElementById("download_button");
+            var oDiv_android = document.getElementById("android");
+            var oDiv_windows_phone = document.getElementById("windows_phone");
+            var oDiv_ios = document.getElementById("ios");
+            var oDiv_windows = document.getElementById("windows");
+            var oDiv_linux = document.getElementById("linux");
+            var oDiv_mac = document.getElementById("mac");
+            //导航栏js
             for(var i = 0;i < oLi.length;i++)
             {
                 oLi[i].onmouseover = function () {
@@ -21,6 +36,70 @@
                 }
                 };
             }
+            //下载按钮js
+            oDiv_download.onclick = function () {
+                if (counter % 2 == 0)
+                {
+                    start_Move(oDiv_android, { left: 590, top: 360 })
+                    start_Move(oDiv_ios, { left: 710, top: 360 })
+                    start_Move(oDiv_linux, { left: 540 })
+                    start_Move(oDiv_mac, { left: 760 })
+                    start_Move(oDiv_windows, { left: 590, top: 540 })
+                    start_Move(oDiv_windows_phone, { left: 710, top: 540 })
+                }
+                else
+                {
+                    start_Move(oDiv_android, { left: 650, top: 450 })
+                    start_Move(oDiv_ios, { left: 650, top: 450 })
+                    start_Move(oDiv_linux, { left: 650 })
+                    start_Move(oDiv_mac, { left: 650 })
+                    start_Move(oDiv_windows, { left: 650, top: 450 })
+                    start_Move(oDiv_windows_phone, { left: 650, top: 450 })
+                }
+                counter++;
+            };
+            //下载按钮js
+            oDiv_download.onclick = function () {
+                if (counter % 2 == 0) {
+                    start_Move(oDiv_android, { left: 590, top: 360 })
+                    start_Move(oDiv_ios, { left: 710, top: 360 })
+                    start_Move(oDiv_linux, { left: 540 })
+                    start_Move(oDiv_mac, { left: 760 })
+                    start_Move(oDiv_windows, { left: 590, top: 540 })
+                    start_Move(oDiv_windows_phone, { left: 710, top: 540 })
+
+                    oDiv_android.onclick = function () {
+                        window.location = "https://downfiles.blob.core.chinacloudapi.cn/file/CloudX.apk";
+                    }
+                    oDiv_windows.onclick = function () {
+                        window.location = "https://downfiles.blob.core.chinacloudapi.cn/file/CloudX.zip";
+                    }
+                    oDiv_ios.onclick = function () {
+                        alert("请静待我们的开发人员开发出来");
+                    }
+                    oDiv_linux.onclick = function () {
+                        alert("请静待我们的开发人员开发出来");
+                    }
+                    oDiv_mac.onclick = function () {
+                        alert("请静待我们的开发人员开发出来");
+                    }
+                    oDiv_windows_phone.onclick = function () {
+                        alert("请静待我们的开发人员开发出来");
+                    }
+                }
+                else {
+                    start_Move(oDiv_android, { left: 650, top: 450 })
+                    start_Move(oDiv_ios, { left: 650, top: 450 })
+                    start_Move(oDiv_linux, { left: 650 })
+                    start_Move(oDiv_mac, { left: 650 })
+                    start_Move(oDiv_windows, { left: 650, top: 450 })
+                    start_Move(oDiv_windows_phone, { left: 650, top: 450 })
+                }
+                counter++;
+            };
+
+                
+                
         }
         
     </script>
@@ -53,53 +132,71 @@
         <div id="download">
             <div id="picture"></div>
             <div id="description"></div>
-            <div id="download_button">下载</div>
+            <div class="seven_button" id="download_button"></div>
+            <div class="seven_button" id="android"></div>
+            <div class="seven_button" id="windows_phone"></div>
+            <div class="seven_button" id="ios"></div>
+            <div class="seven_button" id="windows"></div>
+            <div class="seven_button" id="linux"></div>
+            <div class="seven_button" id="mac"></div>
+           
         </div>
-        <div id="display">
-            <div id="first_floor">
-                <div id="first_floor_description">
-                    <h3>
-                        屏幕共享<br />
-                        <h4>
-                            设备太远看不见？<br />
-                            一切尽在你眼中！<br />
-                        </h4>
-                    </h3>
-                    <p> 设备之间可共享屏幕和适配<br />实现远程操作<br /><br />不同的设备还可整合起来<br />使之相互作为屏幕的扩展</p>
-                </div>
-                <div id="first_floor_image"></div>
-            </div>
-            <div id="second_floor">
-                <div id="second_floor_image"></div>
-                <div id="second_floor_description">
-                    <h3>
-                        文件资源共享<br />
-                        <h4>
-                            不用数据线不用找电脑<br />
-                            小手机也可看大片<br />
-                        </h4>
-                        在PC、笔记本等储设备中适当划分出部分存储空间<br />用于储存共享的数据<br /><br />小容量的移动设备就可以随时访问到更多的资源。
-                    </h3>
-                </div>
-            </div>
-            <div id="third_floor">
-                <div id="third_floor_description">
-                    <h3>
-                        多设备操作映射<br />
-                        <h4>
-                            控制电脑<br />
-                            手机操作更方便<br />
-                        </h4>
-                    </h3>
-                    <p>移动设备为传统的PC提供丰富多样的操作形式<br />当移动设备连接到家庭云中时<br /><br />可以利用设备自身的触摸屏<br />以及其他传感器来控制电脑</p>
-                </div>
-                <div id="third_floor_image"></div>
-            </div>
+
+        <!--宣传视频-->
+        <div>
+            <video src="../Video/test.mp4" width="630" height="530" controls="controls" autoplay="autoplay">
+                
+                        your browser does not support the video tag.</video>
+            <video src="../Video/fast.mp4" width="630" height="530" controls="controls">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <div id="signature">
-            <p>CloudX项目组©2013-2014</p>
-        </div>
-        @{Layout="../Shared/_Layout.cshtml";}
-    </div>
+        <!--滚动图片-->
+
+
+                <div id="display">
+                    <div id="first_floor">
+                        <div id="first_floor_description">
+                            <h3>
+                                屏幕共享
+                                <br />
+                                设备太远看不见？<br />
+                                一切尽在你眼中！
+                            </h3>
+                            <p> 设备之间可共享屏幕和适配,实现远程操作<br />不同的设备还可整合起来,使之相互作为屏幕的扩展</p>
+                        </div>
+                        <div id="first_floor_image"></div>
+                    </div>
+                    <div id="second_floor">
+                        <div id="second_floor_image"></div>
+                        <div id="second_floor_description">
+                            <h3>
+                                文件资源共享<br />
+                                不用数据线不用找电脑<br />
+                                小手机也可看大片<br />
+                            </h3>
+                            <p>
+                                在PC、笔记本等储设备中适当划分出部分存储空间<br />用于储存共享的数据<br />小容量的移动设备就可以随时访问到更多的资源
+                            </p>
+
+                        </div>
+                    </div>
+                    <div id="third_floor">
+                        <div id="third_floor_description">
+                            <h3>
+                                多设备操作映射<br />
+                                控制电脑<br />
+                                手机操作更方便<br />
+                            </h3>
+                            <p>移动设备为传统的PC提供丰富多样的操作形式<br />当移动设备连接到家庭云中时<br />可以利用设备自身的触摸屏,以及其他传感器来控制电脑</p>
+                        </div>
+                        <div id="third_floor_image"></div>
+                    </div>
+                </div>
+                <div id="signature">
+                    <p>CloudX项目组©2014-2015</p>
+                </div>
+                @{Layout = "../Shared/_Layout.cshtml";}
+            </video></div>
 </body>
 </html>

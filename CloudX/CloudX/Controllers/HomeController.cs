@@ -8,9 +8,11 @@ namespace CloudX.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string action)
         {
             ViewBag.Message = "Index page";
+            if (action == "download")
+                Response.Write("wwwww");
 
             return View();
         }
